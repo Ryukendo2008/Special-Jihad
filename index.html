@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <link rel="icon" href="./next-tal.png">
+          <title>Happy Birthday Jihad</title>
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+                    crossorigin="anonymous">
+</head>
+<style>
+          .round {
+                    border-radius: 20px;
+          }
+
+          #ml {
+                    margin-left: -200px;
+          }
+
+          #ms {
+                    padding-left: 200px;
+          }
+
+          img,
+          h2 {
+                    display: none;
+          }
+
+          * {
+                    box-sizing: border-box;
+          }
+
+          body {
+                    height: 100vh;
+          }
+
+          .container {
+                    margin-top: 30px;
+          }
+
+          .half-width {
+                    height: 570px;
+                    background: #222436;
+                    padding: 30px;
+                    text-align: center;
+          }
+
+          .generate-btn {
+                    margin-top: 140px;
+                    width: 180px;
+                    padding: 50px;
+                    border-radius: 50%;
+                    border: 8px solid #39458C;
+                    background-color: #495BC3;
+                    color: #ffffff;
+                    font-weight: bold;
+                    font-size: 20px;
+                    text-align: center;
+          }
+
+          .generate-btn:focus {
+                    outline: none;
+                    box-shadow: none;
+          }
+
+          input[type='text'] {
+                    background-color: #3D4153;
+                    padding: 10px 0px;
+                    color: #ffffff;
+                    width: 80%;
+                    margin: 0 auto;
+                    border: 2px solid #858299;
+                    height: 50px;
+                    padding: 10px;
+          }
+
+          input[type='text']:focus {
+                    background-color: #3D4153;
+                    color: #fff;
+                    font-size: 20px;
+          }
+
+          .numbers {
+                    margin: 30px 0;
+          }
+
+          .calc-typed {
+                    margin-top: 20px;
+                    font-size: 45px;
+                    text-align: right;
+                    color: #fff;
+          }
+
+          .calc-button-row {
+                    width: 100%;
+          }
+
+          .button {
+                    width: 20%;
+                    background: #425062;
+                    color: #fff;
+                    padding: 20px 0;
+                    margin: 5px;
+                    display: inline-block;
+                    font-size: 25px;
+                    text-align: center;
+                    vertical-align: middle;
+                    margin-right: -4px;
+                    border-radius: 10px;
+                    cursor: pointer;
+          }
+
+          .blink-me {
+                    color: #E0B612;
+          }
+
+          .submit-btn {
+                    border: none;
+                    margin-top: 20px;
+                    padding: 10px 120px;
+                    border-radius: 5px;
+                    background: #495BC3;
+                    color: #fff;
+          }
+
+          .notify {
+                    color: #fff;
+                    text-align: center;
+                    margin: 0 auto;
+                    background: #222436;
+                    margin-top: 20px;
+                    border-radius: 15px;
+                    padding: 5px 20px;
+          }
+
+          .notify-section {
+                    width: 35%;
+                    margin: 0 auto;
+          }
+
+          .action-left {
+                    color: #FF3C5F;
+                    margin-top: 10px;
+          }
+
+          #matched {
+                    display: none;
+          }
+
+          #not-matched {
+                    display: none;
+          }
+
+          #images {
+                    display: none;
+          }
+
+          #try {
+                    display: none;
+          }
+</style>
+
+<body>
+          <h1 class="text-center mt-2 text-danger"><b>Happy Birthday Jihad <svg xmlns="http://www.w3.org/2000/svg"
+                                        width="50" height="50" fill="currentColor" class="bi bi-emoji-laughing-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                                  d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5c-.218 0-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5zm5.331 3a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zm-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5c-.218 0-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235z" />
+                              </svg></b>
+          </h1>
+          <p class="ms-3 mt-4">
+                    Firstly, wish you all the very best. Hope your coming birthdays will also be well like this one.
+                    You future will be very bright and I can see it though. Best compliments to all of your family
+                    members. If there any mistake in that case please forgive me.
+          </p>
+          <div class="row mt-5">
+                    <p id="try" class="text-center mb-4 fw-bold">❌ Please reload the page and type the right number</p>
+                    <div class="col-md-6">
+                              <div class="pin-generator half-width">
+                                        <input id="random-num" class="form-control" type="text">
+                                        <button id="gen-pin" class="generate-btn">Generate Pin</button>
+                              </div>
+                    </div>
+                    <div class="col-md-6">
+                              <div class="input-section half-width">
+                                        <input id="screen" class="form-control" type="text">
+                                        <div class="numbers">
+                                                  <div class="calc-body">
+                                                            <div class="calc-button-row">
+                                                                      <div class="button" onclick="number(7)">7</div>
+                                                                      <div class="button" onclick="number(8)">8</div>
+                                                                      <div class="button" onclick="number(9)">9</div>
+                                                            </div>
+                                                            <div class="calc-button-row">
+                                                                      <div class="button" onclick="number(4)">4</div>
+                                                                      <div class="button" onclick="number(5)">5</div>
+                                                                      <div class="button" onclick="number(6)">6</div>
+                                                            </div>
+                                                            <div class="calc-button-row">
+                                                                      <div class="button" onclick="number(1)">1</div>
+                                                                      <div class="button" onclick="number(2)">2</div>
+                                                                      <div class="button" onclick="number(3)">3</div>
+                                                            </div>
+                                                            <div class="calc-button-row">
+                                                                      <div class="button">&lt;</div>
+                                                                      <div class="button" onclick="number(0)">0</div>
+                                                                      <div id="ac" class="button">C</div>
+                                                            </div>
+                                                            <div>
+                                                                      <button id="submit" type="submit"
+                                                                                class="submit-btn">Submit</button>
+                                                                      <p style="display: none;" class="action-left">3
+                                                                                try left</p>
+                                                            </div>
+                                                  </div>
+                                        </div>
+                              </div>
+                    </div>
+          </div>
+          <div id="images">
+                    <p class="ms-3 mt-4">
+                    <p class="text-center mt-5"> Click it : <button class="btn btn-outline-danger"
+                                        onclick="album()">Album</button></p><br><br>
+                    <span class="ms-4">Click on thess buttons please : </span><button onclick="btn1()" id="btn1"
+                              class="btn btn-outline-danger me-2"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" fill="currentColor" class="bi bi-emoji-laughing-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                                  d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5c-.218 0-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5zm5.331 3a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zm-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5c-.218 0-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235z" />
+                              </svg> Happy Birthday</button><button onclick="btn2()" id="btn2"
+                              class="btn btn-outline-danger me-2"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" fill="currentColor" class="bi bi-emoji-laughing-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                                  d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5c-.218 0-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5zm5.331 3a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zm-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5c-.218 0-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235z" />
+                              </svg> Happy Birthday</button><button onclick="btn3()" id="btn3"
+                              class="btn btn-outline-danger me-1"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" fill="currentColor" class="bi bi-emoji-laughing-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                                  d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5c-.218 0-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5zm5.331 3a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zm-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5c-.218 0-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235z" />
+                              </svg> Happy Birthday</button> <button onclick="btn4()" id="btn4"
+                              class="btn btn-outline-danger"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" fill="currentColor" class="bi bi-emoji-laughing-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                                  d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zM7 6.5c0 .501-.164.396-.415.235C6.42 6.629 6.218 6.5 6 6.5c-.218 0-.42.13-.585.235C5.164 6.896 5 7 5 6.5 5 5.672 5.448 5 6 5s1 .672 1 1.5zm5.331 3a1 1 0 0 1 0 1A4.998 4.998 0 0 1 8 13a4.998 4.998 0 0 1-4.33-2.5A1 1 0 0 1 4.535 9h6.93a1 1 0 0 1 .866.5zm-1.746-2.765C10.42 6.629 10.218 6.5 10 6.5c-.218 0-.42.13-.585.235C9.164 6.896 9 7 9 6.5c0-.828.448-1.5 1-1.5s1 .672 1 1.5c0 .501-.164.396-.415.235z" />
+                              </svg> Happy Birthday</button>
+                    </p>
+                    <section class="container">
+                              <h2 id="album" class="text-center mb-4"><u>Small Album</u><svg
+                                                  xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                                                  fill="currentColor" class="bi bi-journal-album ms-2"
+                                                  viewBox="0 0 16 16">
+                                                  <path
+                                                            d="M5.5 4a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5h-5zm1 7a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3z" />
+                                                  <path
+                                                            d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                                                  <path
+                                                            d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                                        </svg></h2>
+                              <div id="ms" class="container d-flex gap-5">
+                                        <div class="col-6 ms-5">
+                                                  <div class="row">
+                                                            <div class="col-12 col-lg-7">
+                                                                      <div class="row"><img id="img1" class="round"
+                                                                                          src="./next-tal.png" alt="">
+                                                                                <p>Jim the next legend of legend</p>
+                                                                      </div>
+                                                                      <div class="row"><img id="img2" class="round mt-4"
+                                                                                          src="./handsome.png" alt="">
+                                                                                <p>Handsome Guy</p>
+                                                                      </div>
+                                                            </div>
+                                                  </div>
+                                        </div>
+                                        <div id="ml" class="col-6">
+                                                  <div class=" row">
+                                                            <div class="col-12 col-lg-7">
+                                                                      <div class="row"><img id="img3" class="round"
+                                                                                          height="390px"
+                                                                                          src="./str-forw.png" alt="">
+                                                                                <p>You are
+                                                                                          straight forward</p>
+                                                                      </div>
+                                                                      <div class="row"><img id="img4" class="round mt-3"
+                                                                                          src="./funny.png" alt="">
+                                                                                <p>Sometimes you are so funny</p>
+                                                                      </div>
+                                                            </div>
+                                                  </div>
+                                        </div>
+                              </div>
+                    </section>
+          </div>
+          <script>
+                    function btn1() {
+                              document.getElementById('img1').style.display = "block";
+                    }
+                    function btn2() {
+                              document.getElementById('img2').style.display = "block";
+                    }
+                    function btn3() {
+                              document.getElementById('img3').style.display = "block";
+                    }
+                    function btn4() {
+                              document.getElementById('img4').style.display = "block";
+                    }
+                    function album() {
+                              document.getElementById('album').style.display = "block";
+                    }
+                    function number(n) {
+                              document.getElementById('screen').value = document.getElementById('screen').value + n;
+                    };
+                    document.getElementById('ac').addEventListener('click', function () {
+                              document.getElementById('screen').value = "";
+                    });
+                    document.getElementById('gen-pin').addEventListener('click', function () {
+                              let random = document.getElementById('random-num');
+                              let randomNumber = parseInt(Math.random(random) * 10000);
+                              if (random.length == 4) {
+                                        // let randomNumber = parseInt(Math.random(random) * 10000);
+                                        document.getElementById('random-num').value = randomNumber;
+                              }
+                              document.getElementById('random-num').value = randomNumber;
+                              document.getElementById('matched').style.display = "none";
+                              document.getElementById('not-matched').style.display = "none";
+                    });
+                    document.getElementById('submit').addEventListener('click', function () {
+                              if (document.getElementById('random-num').value == document.getElementById('screen').value) {
+                                        document.getElementById('images').style.display = "block";
+                              }
+                              else if (document.getElementById('random-num').value != document.getElementById('screen').value) {
+                                        document.getElementById('try').style.display = "block";
+                              }
+                              else {
+                                        document.getElementById('try').style.display = "block";
+                              }
+                              document.getElementById('screen').value = "";
+                              document.getElementById('random-num').value = "";
+                    });
+          </script>
+</body>
+
+</html>
